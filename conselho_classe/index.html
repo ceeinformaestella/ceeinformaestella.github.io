@@ -6,7 +6,18 @@
     <title>Conselho de Classe | CEEINFOR Mãe Stella</title>
     <meta name="robots" content="noindex, nofollow">
 
-    
+    <!-- Google Analytics 4 (Mesmo ID institucional) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GF1QQBE4W0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-GF1QQBE4W0', {
+        page_title: 'Conselho de Classe',
+        page_path: '/conselho_classe'
+      });
+    </script>
 
     <style>
         * {
@@ -18,7 +29,8 @@
         html, body {
             width: 100vw !important;
             height: 100vh !important;
-            overflow: hidden !important; /* Trava qualquer rolagem da casca externa */
+            height: 100dvh !important; /* Suporte moderno a barras móveis em navegadores de celular */
+            overflow: hidden !important;
             background-color: #052442;
         }
 
@@ -28,16 +40,17 @@
             left: 0 !important;
             width: 100vw !important;
             height: 100vh !important;
-            overflow: hidden !important; /* Corta tudo que ultrapassar o topo */
+            height: 100dvh !important;
+            overflow: hidden !important;
         }
 
-        /* Desloca 60px para cima com segurança e compensa a altura */
+        /* Desloca 65px para cima, garantindo a eliminação total da faixa e da borda */
         .iframe-crop-container iframe {
             position: absolute !important;
-            top: -60px !important; /* Joga a barra do Apps Script totalmente para fora */
+            top: -65px !important; 
             left: 0 !important;
             width: 100% !important;
-            height: calc(100% + 60px) !important; /* Compensa os 60px na base */
+            height: calc(100% + 65px) !important;
             border: 0 !important;
             display: block !important;
         }
@@ -48,10 +61,11 @@
     <div class="iframe-crop-container">
         <iframe 
             class="app-frame"
-            src="https://script.google.com/macros/s/AKfycbxqAg9Wh2Rhng0IQuyaxvHV7Ng-W2BQsWnR-xylpl-6Ri9uRcwoUk0ea01XnOBFR-W0/exec"
+            src="https://script.google.com/macros/s/AKfycby_mYDNzraWJJ_55BY0jnbWwxxqo5sxwqT2GzbY6gxFRIwkR3CvULFX3aXF3DhET552/exec"
             allow="fullscreen; camera; microphone; clipboard-write; geolocation"
             loading="eager">
         </iframe>
     </div>
+
 </body>
 </html>
