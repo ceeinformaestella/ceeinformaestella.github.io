@@ -6,59 +6,46 @@
     <title>Conselho de Classe | CEEINFOR Mãe Stella</title>
     <meta name="robots" content="noindex, nofollow">
 
-    <!-- Google Analytics 4 (Mesmo ID institucional) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GF1QQBE4W0"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-GF1QQBE4W0', {
-        page_title: 'Conselho de Classe',
-        page_path: '/conselho_classe'
-      });
-    </script>
+    
 
     <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+        * {
+            margin: 0 !important;
+            padding: 0 !important;
+            box-sizing: border-box !important;
+        }
 
-    html, body {
-        width: 100%;
-        height: 100%;
-        overflow: hidden; /* Corta qualquer conteúdo que saia da tela */
-        background-color: #052442; /* Ou a cor de fundo do seu tema */
-    }
+        html, body {
+            width: 100vw !important;
+            height: 100vh !important;
+            overflow: hidden !important; /* Trava qualquer rolagem da casca externa */
+            background-color: #052442;
+        }
 
-    /* Envoltório que esconde o que passar dos limites da janela */
-    .iframe-wrapper {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
+        .iframe-crop-container {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            overflow: hidden !important; /* Corta tudo que ultrapassar o topo */
+        }
 
-    /* Iframe empurrado para cima para jogar a faixa para fora da visão */
-    .app-frame {
-        position: absolute;
-        left: 0;
-        width: 100%;
-        border: none;
-        
-        /* A faixa tem cerca de 45px a 50px de altura */
-        top: -46px; 
-        height: calc(100% + 46px);
-    }
-</style>
+        /* Desloca 60px para cima com segurança e compensa a altura */
+        .iframe-crop-container iframe {
+            position: absolute !important;
+            top: -60px !important; /* Joga a barra do Apps Script totalmente para fora */
+            left: 0 !important;
+            width: 100% !important;
+            height: calc(100% + 60px) !important; /* Compensa os 60px na base */
+            border: 0 !important;
+            display: block !important;
+        }
+    </style>
 </head>
-    
 <body>
-    <div class="iframe-wrapper">
+
+    <div class="iframe-crop-container">
         <iframe 
             class="app-frame"
             src="https://script.google.com/macros/s/AKfycbxqAg9Wh2Rhng0IQuyaxvHV7Ng-W2BQsWnR-xylpl-6Ri9uRcwoUk0ea01XnOBFR-W0/exec"
